@@ -22,7 +22,7 @@
 
   <DefaultSettings>
     <!-- 重要：部署到 GitHub Pages 后，请将 spotouc 和 repository 替换为你的实际用户名和仓库名 -->
-    <SourceLocation DefaultValue="https://spotouc.github.io/repository/taskpane.html"/>
+    <SourceLocation DefaultValue="https://spotouc.github.io/repository/manifest.html"/>
   </DefaultSettings>
 
   <Permissions>ReadWriteDocument</Permissions>
