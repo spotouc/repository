@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <title>AI 数据清洗助手</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles.css" />
+    <script
+      type="text/javascript"
+      src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js">
+    </script>
+    <script defer src="taskpane.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>AI 数据清洗助手</h1>
+      <section class="section">
+        <h2>1. 配置 SiliconFlow</h2>
+        <label class="field">
+          <span class="field-label">API Key</span>
+          <input id="apiKey" type="password" placeholder="sk-..." />
+        </label>
+        <label class="field">
+          <span class="field-label">API 地址</span>
+          <input
+            id="apiBaseUrl"
+            type="text"
+            value="https://api.siliconflow.cn/v1/chat/completions"
+          />
+        </label>
+        <label class="field">
+          <span class="field-label">模型名称</span>
+          <input id="modelName" type="text" value="Qwen/Qwen2.5-7B-Instruct" />
+        </label>
+        <button id="saveConfigBtn" class="primary">保存配置</button>
+        <p class="hint">配置会保存在本机浏览器的 localStorage 中，不会写入工作簿。</p>
+      </section>
+
+      <section class="section">
+        <h2>2. 选择数据区域</h2>
+        <p>在 Excel 中先选中需要清洗的数据区域，然后点击下面按钮。</p>
+        <label class="field">
+          <span class="field-label">清洗指令（可选）</span>
+          <textarea
+            id="cleanInstruction"
+            rows="3"
+            placeholder="例如：去除前后空格，统一日期格式为 YYYY-MM-DD，删除完全空行等。留空则使用默认清洗规则。"></textarea>
+        </label>
+        <button id="cleanDataBtn" class="primary">清洗选中区域数据</button>
+      </section>
+
+      <section class="section log-section">
+        <h2>日志</h2>
+        <pre id="log" class="log"></pre>
+      </section>
+    </div>
+  </body>
+</html>
+
